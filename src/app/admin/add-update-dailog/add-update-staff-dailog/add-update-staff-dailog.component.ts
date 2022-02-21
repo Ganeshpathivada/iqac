@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 
 @Component({
@@ -14,46 +15,73 @@ export class AddUpdateStaffDailogComponent implements OnInit {
   address:any;
   url = "http://localhost:8080/api/v1/staff/"
   staffData: any;
+  selectedFaculity: any;
 
-  constructor(private fb:FormBuilder, private http:HttpClient, private router:Router) {
+  constructor(private fb:FormBuilder, private http:HttpClient, private router:Router, private dialogRef: MatDialogRef<AddUpdateStaffDailogComponent>,
+    @Inject(MAT_DIALOG_DATA) data:any) {
+    this.selectedFaculity = data;
     this.registerStaff = this.fb.group({
-      id:[null],
+      id:[0],
       fullName : [""],
       dpmt : [""],
+      dob : [""],
+      gender : [""],
+      category : [""],
       qualification : [""],
+      presentPosition : [""],
+      doj : [""],
+      teachingExp : [""],
+      industrialExp : [""],
+      panNumber : [""],
+      aadharNumber :[""],
       phone : [""],
       emailId : [""],
-      gender : [""]
+      awards : [""],
+      noOfPhd : [""],
+      booksAuthored : [""],
+      noOfResearchPapers : [""],
+      totalNoOfResearch :[""],
+      patents : [""],
+      sno:[null],
+      empNo:[null]
     })
+    
   }
 
   
 
   ngOnInit(): void {
-    const data = localStorage.getItem("staff")
-    this.staffData = JSON.parse(data!)
-    console.log("data", this.staffData)
-    this.registerStaff.setValue(this.staffData)
+    console.log("selected", this.selectedFaculity)
+    if(this.selectedFaculity.action === "update"){
+      console.log("cons", this.selectedFaculity)
+      this.registerStaff.setValue(this.selectedFaculity?.data)
+    }
+    
   }
 
   onSubmit(){
     console.log("sss",this.registerStaff.value)
     
-    if(this.staffData){
-      this.http.put(this.url + this.staffData.id, this.registerStaff.value).subscribe(res=>{
+    if(this.selectedFaculity?.action === "update"){
+      this.http.put(this.url + this.selectedFaculity?.data.id, this.registerStaff.value).subscribe(res=>{
         console.log("update", res)
-        localStorage.removeItem('staff')
-        this.router.navigateByUrl('/admin/staff')
+        alert("Faculity Has Been Updated successfully")
+        this.dialogRef.close()
       })
     }else{
       this.http.post(this.url, this.registerStaff.value).subscribe(res=>{
-        this.router.navigateByUrl('/admin/staff')
+        // this.router.navigateByUrl('/admin/staff')
+        alert("Faculity Has Been Created successfully")
+        this.dialogRef.close()
       })
     }
   }
+
+  onClose(){
+    this.dialogRef.close()
+  }
   
   ngOnDestroy(): void {
-    localStorage.removeItem('staff')
     //Called once, before the instance is destroyed.
     //Add 'implements OnDestroy' to the class.
     

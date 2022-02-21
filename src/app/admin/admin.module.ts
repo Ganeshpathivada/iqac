@@ -7,6 +7,9 @@ import { StaffListComponent } from './staff-list/staff-list.component';
 import { AddUpdateStaffDailogComponent } from './add-update-dailog/add-update-staff-dailog/add-update-staff-dailog.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { MaterialModule } from '../shared/material/material.module';
+import { MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material/dialog';
+import { FilterPipe } from '../shared/pipes/filter.pipe';
 
 
 @NgModule({
@@ -14,13 +17,19 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     AdminComponent,
     StaffListComponent,
     AddUpdateStaffDailogComponent,
-    DashboardComponent
+    DashboardComponent,
+    FilterPipe
+    
   ],
   imports: [
     CommonModule,
     AdminRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-  ]
+    MaterialModule
+  ],
+  providers: [
+    {provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: false}}
+  ],
 })
 export class AdminModule { }

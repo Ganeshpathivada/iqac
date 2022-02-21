@@ -4,3 +4,16 @@ body{
     // font-family: sans-serif;
     font-family: verdana, arial, helvetica, sans-serif;
 }
+
+.btn-primary{
+    color: #FFFFFF !important;
+    background-color: #591434 !important;
+    border: 1px solid #591434 !important;
+    &:hover{
+        background-color: #FFFFFF !important;
+        color: #591434 !important;
+        border: 1px solid #591434 !important;
+    }
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

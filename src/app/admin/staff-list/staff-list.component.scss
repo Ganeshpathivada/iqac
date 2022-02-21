@@ -1,0 +1,47 @@
+.card-header{
+    display: flex;
+    justify-content: space-between;
+}
+.btnGroup{
+    color: #FFFFFF;
+    background-color: #591434;
+}
+mat-icon{
+    font-size: 18px;
+    cursor: pointer;
+}
+td{
+    li{
+        list-style-type: none;
+    }
+}
+img {
+    vertical-align: baseline !important;
+}
+
+.card {
+    .card-header {
+        margin-bottom: 0px;
+        .card-title {
+            margin-bottom: 0px;
+            display: flex;
+            align-items: center;
+            .card-label {
+                margin-bottom: 0px;
+            }
+        }
+    }
+
+    .card-toolbar {
+        display: flex;
+        .serach-input {
+            margin-right: 15px;
+            
+        }    
+    }
+}
+
+.faculity-table{
+    vertical-align: text-top !important;
+    font-size: small !important;
+}
