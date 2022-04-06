@@ -1,0 +1,98 @@
+<div class="country-container mt-3">
+    <div class="container-fluid">
+      <div class="card card-custom example example-compact gutter-b">
+        <div class="card-header">
+          <div class="card-title">
+            <h3 class="card-label">RANK</h3>
+          </div>
+          <div class="card-toolbar">
+            <div class="serach-input">
+              <input type="search" class="form-control" [(ngModel)]="searchData" placeholder="Search Here ..."> 
+            </div>
+            <!-- <div class="example-tools ">
+              <select  class="form-select form-select-md mx-1" aria-label="Default select example" [(ngModel)]="searchByType" (change)="searchData = null">
+                <option selected>Select Type</option>
+                <option value="all india rank">All India Rank</option>
+                <option value="international">International</option>
+              </select>
+            </div> -->
+            <!-- <div class="example-tools justify-content-centerr mx-2">
+              <button (click)="addRank()" class="btn btnGroup">
+                Add Faculity by Excel
+              </button>
+            </div> -->
+            <div class="example-tools justify-content-centerr">
+              <button (click)="addRank()" class="btn btnGroup">
+                Add Rank
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+            <div class="container-fluid">
+                <div class="row flex-nowrap">
+                    <div class="col-auto px-0">
+                        <div id="sidebar" class="collapse collapse-horizontal show border-end">
+                            <div id="sidebar-nav" class="list-group border-0 rounded-0 text-sm-start min-vh-100">
+                                <a (click)="onChange('nirf')" [ngClass]="{'active': searchByType === 'nirf'}"  class="list-group-item border-end-0 d-inline-block text-truncate" ><span>NIRF</span> </a>
+                                <a (click)="onChange('india today')" [ngClass]="{'active': searchByType === 'india today'}"  class="list-group-item border-end-0 d-inline-block text-truncate" ><span>India Today</span> </a>
+                                <a (click)="onChange('the week hansa')" [ngClass]="{'active': searchByType === 'the week hansa'}"  class="list-group-item border-end-0 d-inline-block text-truncate" ><span>The Week Hansa</span> </a>
+                                <a (click)="onChange('atal ranking')" [ngClass]="{'active': searchByType === 'atal ranking'}"  class="list-group-item border-end-0 d-inline-block text-truncate" ><span>Atal ranking</span> </a>
+                                <a (click)="onChange('qs')" [ngClass]="{'active': searchByType === 'qs'}"  class="list-group-item border-end-0 d-inline-block text-truncate" ><span>QS</span> </a>
+                                <a (click)="onChange('tle')" [ngClass]="{'active': searchByType === 'tle'}"  class="list-group-item border-end-0 d-inline-block text-truncate" ><span>TLE</span> </a>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <main class="col ps-md-2 pt-2">
+                        <!-- <a href="#" data-bs-target="#sidebar" data-bs-toggle="collapse" class="border rounded-3 p-1 text-decoration-none"><i class="bi bi-list bi-lg py-2 p-1"></i> Menu</a> -->
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="mx-auto" *ngIf="rankDetails?.length === 0">No Data Found</div>
+                                <div class="table-responsive example-container mat-elevation-z8"  *ngIf="rankDetails?.length > 0">
+                                    <table class="table  table-hover ">
+                                    <thead>
+                                        <tr class="faculity-table">
+                                            <th>S.No</th>
+                                            <th>Rank</th>
+                                            <th>Year</th>
+                                            <!-- <th>Type</th> -->
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead> 
+                                    <tbody>
+                                        <tr *ngFor="let item of rankDetails | filter: searchData | filter:searchByType; let i=index" >
+                                          <div>{{rankDetails.length}}</div>
+                                            <td>{{i+1}} </td>
+                                            <td>{{item.rank1}}</td>
+                                            <td>{{item.year}}</td>
+                                            <!-- <td>{{item.type}}</td> -->
+                                            <td>
+                                                <!-- <mat-icon (click)="viewRank(item)">visibility</mat-icon> -->
+                                                <mat-icon (click)="editRank(item)">edit</mat-icon>
+                                                <mat-icon (click)="deleteRank(item)">delete</mat-icon>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                    </table>
+                    
+                                    <!-- pagination div starts from here -->
+                                    <mat-paginator [length]="rankDetails?.length"
+                                                [pageSize]="10"
+                                                [pageIndex]="pageIndex"
+                                                [pageSizeOptions]="[5, 10, 25, 100]"
+                                                aria-label="Select page">
+                                    </mat-paginator>
+                                
+                            <!-- pagination div ends here -->
+                                </div>
+                            </div>
+                        </div>
+                    </main>
+                </div>
+            </div>
+            
+        </div>
+        </div>
+    </div>
+  </div>

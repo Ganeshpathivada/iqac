@@ -1,178 +1,495 @@
-<!-- <div class="card">
-    <div class="card-body">
-        <form  [formGroup]="registerStaff"  (ngSubmit)="onSubmit()">
-            <div class="row">
-                <h3>Enter Faculty Details:</h3>
-                <div class="col-md-4 mb-2">
-                    <div class="form-group">
-                        <label>Emp.No:</label>
-                        <input type="number" class="form-control" formControlName="empNo" placeholder="Enter empNo">
-                    </div>
-                </div>
-                <div class="col-md-4 mb-2">
-                    <div class="form-group">
-                        <label>FullName:</label>
-                        <input type="text" class="form-control" formControlName="fullName" placeholder="Enter Your Name">
-                    </div>
-                </div>
-                <div class="col-md-4 mb-2">
-                    <div class="form-group">
-                        <label>Department:</label>
-                        <input type="text" class="form-control" formControlName="dpmt" placeholder="Enter Your Department">
-                    </div>
-                </div>
-                <div class="col-md-4 mb-2">
-                    <div class="form-group">
-                        <label>Date of Birth:</label>
-                        <input type="date" class="form-control" formControlName="dob" placeholder="Enter Your DOB">
-                    </div>
-                </div>
-                <div class="col-md-4 mb-2">
-                    <div class="form-group">
-                        <label>Gender:</label>
-                        <input type="text" id="gender" class="form-control" formControlName="gender" placeholder="Enter your gender">
-                    </div>
-                </div>
-                <div class="col-md-4 mb-2">
-                    <div class="form-group">
-                        <label>Category:</label>
-                        <input type="text" class="form-control" formControlName="category" placeholder="Enter category">
-                    </div>
-                </div>
-                <div class="col-md-4 mb-2">
-                    <div class="form-group">
-                        <label>Qualification:</label>
-                        <input type="text" class="form-control" formControlName="qualification" placeholder="Enter Your qualification">
-                    </div>
-                </div>
-                <div class="col-md-4 mb-2">
-                    <div class="form-group">
-                        <label>Present Position:</label>
-                        <input type="text" class="form-control" formControlName="presentPosition" placeholder="Enter Present position">
-                    </div>
-                </div>
-                <div class="col-md-4 mb-2">
-                    <div class="form-group">
-                        <label>Date of Joining:</label>
-                        <input type="date" class="form-control" formControlName="doj">
-                    </div>
-                </div>
-                <div class="col-md-4 mb-2">
-                    <div class="form-group">
-                        <label>TeachingExp:</label>
-                        <input type="number" class="form-control" formControlName="teachingExp" placeholder="Enter TeachingExp">
-                    </div>
-                </div>
-                <div class="col-md-4 mb-2">
-                    <div class="form-group">
-                        <label>IndustrialExp:</label>
-                        <input type="number" class="form-control" formControlName="industrialExp" placeholder="Enter IndustrialExp">
-                    </div>
-                </div>
-                <div class="col-md-4 mb-2">
-                    <div class="form-group">
-                        <label>PanNumber:</label>
-                        <input type="text" class="form-control" formControlName="panNumber" placeholder="Enter Pan Number">
-                    </div>
-                </div>
-                <div class="col-md-4 mb-2">
-                    <div class="form-group">
-                        <label>AadharNumber:</label>
-                        <input type="text" class="form-control" formControlName="aadharNumber" placeholder="Enter AadharNumber">
-                    </div>
-                </div>
-                <div class="col-md-4 mb-2">
-                    <div class="form-group">
-                        <label>Phone:</label>
-                        <input type="number" class="form-control" formControlName="phone" placeholder="Enter mobile number">
-                    </div>
-                </div>
-                <div class="col-md-4 mb-2">
-                    <div class="form-group">
-                        <label>Email Id:</label>
-                        <input type="email" class="form-control" formControlName="emailId" placeholder="Enter Email id">
-                    </div>
-                </div>
-                <div class="col-md-4 mb-2">
-                    <div class="form-group">
-                        <label>Awards if any:</label>
-                        <input type="text" class="form-control" formControlName="awards" placeholder="Enter Awards">
-                    </div>
-                </div>
-                <div class="col-md-4 mb-2">
-                    <div class="form-group">
-                        <label>No. of Phd's:</label>
-                        <input type="number" class="form-control" formControlName="noOfPhd" placeholder="Enter No.of Phds">
-                    </div>
-                </div>
-                <div class="col-md-4 mb-2">
-                    <div class="form-group">
-                        <label>Books Authored:</label>
-                        <input type="text" class="form-control" formControlName="booksAuthored" placeholder="Enter Books Authored">
-                    </div>
-                </div>
-                <div class="col-md-4 mb-2">
-                    <div class="form-group">
-                        <label>No. of researchPapers:</label>
-                        <input type="number" class="form-control" formControlName="noOfResearchPapers" placeholder="Enter No.of researchPapers">
-                    </div>
-                </div>
-                <div class="col-md-4 mb-2">
-                    <div class="form-group">
-                        <label>total No.of researchs:</label>
-                        <input type="number" class="form-control" formControlName="totalNoOfResearch" placeholder="Enter otal No.of researchs">
-                    </div>
-                </div>
-                <div class="col-md-4 mb-2">
-                    <div class="form-group">
-                        <label>Patents:</label>
-                        <input type="text" class="form-control" formControlName="patents" placeholder="Enter Patents">
-                    </div>
-                </div>
-                
-            </div>
-            <div>
-                <button type="submit">Create Staff</button>
-                <button type="submit" *ngIf="staffData">Update Staff</button>
-            </div>
-        </form>
-    </div>
-</div> -->
-
-<div class="agent-addupdate-dialog">
-    <div class="d-flex justify-content-between">
-      <!-- <h1 mat-dialog-title>
-        {{ selectedStory.action === "add" ? "ADD STORY" : "Upload Asserts" }} 
-      </h1> -->
-      <h1 mat-dialog-title *ngIf="selectedFaculity.action === 'uploadExcel'">Add Faculity Using Excel</h1>
-      <h1 mat-dialog-title *ngIf="selectedFaculity.action === 'update'">Update Faculity Details - {{selectedFaculity?.data?.name}}</h1>
-      <h1 mat-dialog-title *ngIf="selectedFaculity.action === 'add'">ADD Faculity</h1>
-      <h1 mat-dialog-title *ngIf="selectedFaculity.action === 'view'">View Faculity Details</h1>
-      <div class="button">
-        <a class="btn btn-xs btn-icon btn-hover-primary" href="javascript:void(0)" (click)="onClose()">X</a>
-      </div>
-    </div>
-  
-    <div mat-dialog-content>
-        <form  [formGroup]="registerStaff" *ngIf="selectedFaculity.action == 'add' || selectedFaculity.action === 'update'">
-            <div class="header">
-                <div class="card mb-2">
-                    <div class="card-body">
-                        <h3>Personal Details</h3>
-                    <div class="row">
-                        <div class="col-md-4 mb-2">
-                            <div class="form-group">
-                                <label>FullName:</label>
-                                <input type="text" class="form-control" formControlName="fullName" placeholder="Enter Your Name">
+<div class="card">
+    <div class="container-fluid">
+        <div class="d-flex justify-content-between">
+          <h1 mat-dialog-title *ngIf="selectedFaculity.action === 'uploadExcel'">Add Faculity Using Excel</h1>
+          <h1 mat-dialog-title *ngIf="selectedFaculity.action === 'update'">Update Faculity Details - {{selectedFaculity?.data?.name}}</h1>
+          <h1 mat-dialog-title *ngIf="selectedFaculity.action === 'add'">ADD Faculity</h1>
+          <h1 mat-dialog-title *ngIf="selectedFaculity.action === 'view'">View Faculity Details</h1>
+        </div>
+      
+        <div>
+            <form  [formGroup]="registerStaff"  *ngIf="selectedFaculity.action == 'add' || selectedFaculity.action === 'update'">
+                <div class="header">
+                    <div class="card example-container mat-elevation-z8 mb-2">
+                        <div class="card-body">
+                            
+                            <h3>Personal Details</h3>
+                        <div class="row">
+                            <div class="col-md-3 mb-2">
+                                <div class="form-group">
+                                    <label>Name:</label>
+                                    <input type="text" class="form-control" formControlName="name" placeholder="Enter Name">
+                                </div>
+                            </div>
+                            <div class="col-md-3 mb-2">
+                                <div class="form-group">
+                                    <label>Emp.No:</label>
+                                    <input type="number" class="form-control" formControlName="empNo" placeholder="Enter empNo">
+                                </div>
+                            </div>
+                            <div class="col-md-3 mb-2">
+                                <div class="form-group">
+                                    <label>Mobile No:</label>
+                                    <input type="number" class="form-control" formControlName="phone" placeholder="Enter mobile number">
+                                </div>
+                            </div>
+                            <div class="col-md-3 mb-2">
+                                <div class="form-group">
+                                    <label>Email Id:</label>
+                                    <input type="email" class="form-control" formControlName="emailId" placeholder="Enter Email id">
+                                </div>
+                            </div>
+                            <div class="col-md-3 mb-2">
+                                <div class="form-group">
+                                    <label>Date of Birth:</label>
+                                    <input type="date" class="form-control" formControlName="dob" placeholder="Enter Your DOB">
+                                </div>
+                            </div>
+                            <div class="col-md-3 mb-2">
+                                <div class="form-group">
+                                    <label>Gender:</label>
+                                    <input type="text" id="gender" class="form-control" formControlName="gender" placeholder="Enter your gender">
+                                </div>
+                            </div>
+                            <div class="col-md-3 mb-2">
+                                <div class="form-group">
+                                    <label>PanNumber:</label>
+                                    <input type="text" class="form-control" formControlName="panNumber" placeholder="Enter Pan Number">
+                                </div>
+                            </div>
+                            <div class="col-md-3 mb-2">
+                                <div class="form-group">
+                                    <label>AadharNumber:</label>
+                                    <input type="text" class="form-control" formControlName="aadharNumber" placeholder="Enter AadharNumber">
+                                </div>
                             </div>
                         </div>
-                        <div class="col-md-4 mb-2">
+                        </div>
+                    </div>
+                </div>
+                <div class="card  example-container mat-elevation-z8 pb-4">
+                    <div class="card-body">
+                        <h3>Other Deatils</h3>
+                    <div class="row">
+                        <div class="col-md-3 mb-2">
+                            <div class="form-group">
+                                <label>Date of Joining:</label>
+                                <input type="date" class="form-control" formControlName="doj">
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-2">
+                            <div class="form-group">
+                                <label>Department:</label>
+                                <input type="text" class="form-control" formControlName="dpmt" placeholder="Enter Your Department">
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-2">
+                            <div class="form-group">
+                                <label>Category:</label>
+                                <input type="text" class="form-control" formControlName="category" placeholder="Enter category">
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-2">
+                            <div class="form-group">
+                                <label>Qualification:</label>
+                                <input type="text" class="form-control" formControlName="qualification" placeholder="Enter Your qualification">
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-2">
+                            <div class="form-group">
+                                <label>Present Position:</label>
+                                <input type="text" class="form-control" formControlName="presentPosition" placeholder="Enter Present position">
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-3 mb-2">
+                            <div class="form-group">
+                                <label>TeachingExp:</label>
+                                <input type="number" class="form-control" formControlName="teachingExp" placeholder="Enter TeachingExp In Years">
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-2">
+                            <div class="form-group">
+                                <label>IndustrialExp:</label>
+                                <input type="number" class="form-control" formControlName="industrialExp" placeholder="Enter IndustrialExp Years">
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-2">
+                            <div class="form-group">
+                                <label>No. of Phd's:</label>
+                                <input type="number" class="form-control" formControlName="noOfPhd" placeholder="Enter No.of Phds">
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-2">
+                            <div class="form-group">
+                                <label>Awards if any:</label>
+                                <input type="text" class="form-control" formControlName="awards" placeholder="Enter Awards">
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label>No. of researchPapers:</label>
+                                <input type="number" class="form-control" formControlName="noOfResearchPapers" placeholder="Enter No.of researchPapers">
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-2">
+                            <div class="form-group">
+                                <label>Books Authored:</label>
+                                <input type="text" class="form-control" formControlName="booksAuthored" placeholder="Enter Books Authored">
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label>total No.of researchs:</label>
+                                <input type="number" class="form-control" formControlName="totalNoOfResearch" placeholder="Enter otal No.of researchs">
+                            </div>
+                        </div>
+
+
+                        <div class="accordion" id="accordionExample">
+                            <div class="accordion-item">
+                              <h2 class="accordion-header" id="headingOne">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                  Patents
+                                </button>
+                              </h2>
+                              <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <div class="col-lg-12">
+                                        <div class="card example-container mat-elevation-z8">
+                                            <div class="card-body">
+                                                <div class="d-flex justify-content-between">
+                                                    <h3 class="text-right"></h3>
+                                                    <button (click)="addPatentDetails()">Add Row</button>
+                                                </div>
+                                                <div class="table-resonsive">
+                                                    <table class="table table-bordered">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>S.No</th>
+                                                                <th>Title</th>
+                                                                <th>Year Of Award</th>
+                                                                <th>National/International</th>
+                                                                <th>Status</th>
+                                                                <th>Action</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr formArrayName="patentDto" *ngFor="let item of patentFormGroups.controls; let i = index;">
+                                                                <td>{{i+1}}</td>
+                                                                <td [formGroupName]="i"><input type="text" formControlName="title" class="form-control"></td>
+                                                                <td [formGroupName]="i"><input type="year" formControlName="yearOfAward" class="form-control"></td>
+                                                                <td [formGroupName]="i"><input type="text" formControlName="nationalOrInternational" class="form-control"></td>
+                                                                <td [formGroupName]="i"><input type="text" formControlName="status" class="form-control"></td>
+                                                                <td [formGroupName]="i" ><mat-icon style="cursor: pointer;" (click)="removePatentDetails(i)">delete</mat-icon></td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="accordion-item">
+                              <h2 class="accordion-header" id="headingTwo">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                  Books
+                                </button>
+                              </h2>
+                              <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <div class="col-lg-12">
+                                        <div class="card example-container mat-elevation-z8">
+                                            <div class="card-body">
+                                                <div class="d-flex justify-content-between">
+                                                    <h3 class="text-right"></h3>
+                                                    <button (click)="addBookDetails()">Add Row</button>
+                                                </div>
+                                                <div class="table-resonsive">
+                                                    <table class="table table-bordered">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>S.No</th>
+                                                                <th>Title of Book</th>
+                                                                <th>Title of Book Chapter</th>
+                                                                <th>ISBN No</th>
+                                                                <th>year Of Publishing</th>
+                                                                <th>national Or International</th>
+                                                                <th>affiliating Inst</th>
+                                                                <th>Action</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr formArrayName="bookDto" *ngFor="let item of bookFormGroups.controls; let i = index;">
+                                                                <td>{{i+1}}</td>
+                                                                <td [formGroupName]="i"><input type="text" formControlName="titleOfBook" class="form-control"></td>
+                                                                <td [formGroupName]="i"><input type="year" formControlName="titleOfBookChapter" class="form-control"></td>
+                                                                <td [formGroupName]="i"><input type="year" formControlName="isbnNo" class="form-control"></td>
+                                                                <td [formGroupName]="i"><input type="year" formControlName="yearOfPublishing" class="form-control"></td>
+                                                                <td [formGroupName]="i"><input type="text" formControlName="nationalOrInternational" class="form-control"></td>
+                                                                <td [formGroupName]="i"><input type="text" formControlName="affiliatingInst" class="form-control"></td>
+                                                                <td [formGroupName]="i" ><mat-icon style="cursor: pointer;" (click)="removeBookDetails(i)">delete</mat-icon></td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="accordion-item">
+                              <h2 class="accordion-header" id="headingThree">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                    Research Papers
+                                </button>
+                              </h2>
+                              <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <div class="col-lg-12">
+                                        <div class="card example-container mat-elevation-z8">
+                                            <div class="card-body">
+                                                <div class="d-flex justify-content-between">
+                                                    <h3 class="text-right"></h3>
+                                                    <button (click)="addResearchPapersDetails()">Add Row</button>
+                                                </div>
+                                                <div class="table-resonsive">
+                                                    <table class="table table-bordered">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>S.No</th>
+                                                                <th>Name Of The Authors</th>
+                                                                <th>title Of The Papers</th>
+                                                                <th>journal name Vol PP</th>
+                                                                <th>ISSN No</th>
+                                                                <th>national Or International</th>
+                                                                <th>academicYear</th>
+                                                                <th>Action</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr formArrayName="rpDto" *ngFor="let item of researchPapersFormGroups.controls; let i = index;">
+                                                                <td>{{i+1}}</td>
+                                                                <td [formGroupName]="i"><input type="text" formControlName="nameOfTheAuthors" class="form-control"></td>
+                                                                <td [formGroupName]="i"><input type="year" formControlName="titleOfThePapers" class="form-control"></td>
+                                                                <td [formGroupName]="i"><input type="year" formControlName="journalnameVolPP" class="form-control"></td>
+                                                                <td [formGroupName]="i"><input type="year" formControlName="issnNo" class="form-control"></td>
+                                                                <td [formGroupName]="i"><input type="text" formControlName="nationalOrInternational" class="form-control"></td>
+                                                                <td [formGroupName]="i"><input type="text" formControlName="academicYear" class="form-control"></td>
+                                                                <td [formGroupName]="i" ><mat-icon style="cursor: pointer;" (click)="removeResearchPapersDetails(i)">delete</mat-icon></td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                </div>
+            </form>   
+            <form *ngIf="selectedFaculity.action === 'uploadExcel'">
+                <div class="form-group">
+                    <label>Upload Excel File:</label>
+                    <input class="form-control" type="file" accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel" />
+                </div>
+            </form>
+            <div class="view" *ngIf="selectedFaculity.action === 'view'">
+                <div class="header">
+                    <div class="card mb-2">
+                        <div class="card-body">
+                            <h3>Personal Details</h3>
+                        <div class="row">
+                            <div class="col-md-4 mb-2">
+                                <div class="form-group">
+                                    <label>Name:</label>
+                                    <p>{{selectedFaculity?.data.name}}</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-2">
+                                <div class="form-group">
+                                    <label>Mobile No:</label>
+                                    <p>{{selectedFaculity?.data.phone}}</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-2">
+                                <div class="form-group">
+                                    <label>Email Id:</label>
+                                    <p>{{selectedFaculity?.data.emailId}}</p>
+                                </div>
+                            </div>
+                            <div class="col-md-3 mb-2">
+                                <div class="form-group">
+                                    <label>Date of Birth:</label>
+                                    <p>{{selectedFaculity?.data.dob | date:"dd-MM-yyyy"}}</p>
+                                </div>
+                            </div>
+                            <div class="col-md-3 mb-2">
+                                <div class="form-group">
+                                    <label>Gender:</label>
+                                    <p>{{selectedFaculity?.data.gender}}</p>
+                                </div>
+                            </div>
+                            <div class="col-md-3 mb-2">
+                                <div class="form-group">
+                                    <label>PanNumber:</label>
+                                    <p>{{selectedFaculity?.data.panNumber}}</p>
+                                </div>
+                            </div>
+                            <div class="col-md-3 mb-2">
+                                <div class="form-group">
+                                    <label>AadharNumber:</label>
+                                    <p>{{selectedFaculity?.data.aadharNumber}}</p>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <h3>Other Deatils</h3>
+                    <div class="row">
+                        <div class="col-md-3 mb-2">
+                            <div class="form-group">
+                                <label>Emp.No:</label>
+                                <p>{{selectedFaculity?.data.empNo}}</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-2">
+                            <div class="form-group">
+                                <label>Date of Joining:</label>
+                                <p>{{selectedFaculity?.data.doj | date:'dd-MM-yyyy'}}</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-2">
+                            <div class="form-group">
+                                <label>Department:</label>
+                                <p>{{selectedFaculity?.data.dpmt}}</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-2">
+                            <div class="form-group">
+                                <label>Category:</label>
+                                <p>{{selectedFaculity?.data.category}}</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-2">
+                            <div class="form-group">
+                                <label>Qualification:</label>
+                                <p>{{selectedFaculity?.data.qualification}}</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-2">
+                            <div class="form-group">
+                                <label>Present Position:</label>
+                                <p>{{selectedFaculity?.data.presentPosition}}</p>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-3 mb-2">
+                            <div class="form-group">
+                                <label>TeachingExp:</label>
+                                <p>{{selectedFaculity?.data.teachingExp}}</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-2">
+                            <div class="form-group">
+                                <label>IndustrialExp:</label>
+                                <p>{{selectedFaculity?.data.industrialExp}}</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-2">
+                            <div class="form-group">
+                                <label>No. of Phd's:</label>
+                                <p>{{selectedFaculity?.data.noOfPhd}}</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-2">
+                            <div class="form-group">
+                                <label>Awards if any:</label>
+                                <p>{{selectedFaculity?.data.awards}}</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label>No. of researchPapers:</label>
+                                <p>{{selectedFaculity?.data.noOfResearchPapers}}</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-2">
+                            <div class="form-group">
+                                <label>Books Authored:</label>
+                                <p>{{selectedFaculity?.data.booksAuthored}}</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label>total No.of researchs:</label>
+                                <p>{{selectedFaculity?.data.totalNoOfResearch}}</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label>Patents:</label>
+                                <p>{{selectedFaculity?.data.patents}}</p>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="d-flex justify-content-end">
+            <button *ngIf="selectedFaculity.action === 'add'" class="btn" (click)="onSubmit()" type="submit">Create Faculity</button>
+            <button *ngIf="selectedFaculity.action === 'update'" class="btn" (click)="onSubmit()" type="submit">Update Faculity</button>
+            <button *ngIf="selectedFaculity.action === 'uploadExcel'" class="btn" (click)="onSubmit()" type="submit">Submit</button>
+        </div>
+        
+        <!-- <mat-dialog-actions class="d-flex justify-content-end">
+            
+        </mat-dialog-actions> -->
+    </div>
+</div>
+
+<!-- <div class="">
+    <div class="container-fluid">
+        <h1 class="text-center">ADD STAFF</h1>
+        <form  [formGroup]="registerStaff" >
+            <div class="header">
+                <div class="card example-container mat-elevation-z8 mb-2">
+                    <div class="card-body">
+                        
+                        <h3>Personal Details</h3>
+                    <div class="row">
+                        <div class="col-md-3 mb-2">
+                            <div class="form-group">
+                                <label>Name:</label>
+                                <input type="text" class="form-control" formControlName="name" placeholder="Enter Name">
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-2">
+                            <div class="form-group">
+                                <label>Emp.No:</label>
+                                <input type="number" class="form-control" formControlName="empNo" placeholder="Enter empNo">
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-2">
                             <div class="form-group">
                                 <label>Mobile No:</label>
                                 <input type="number" class="form-control" formControlName="phone" placeholder="Enter mobile number">
                             </div>
                         </div>
-                        <div class="col-md-4 mb-2">
+                        <div class="col-md-3 mb-2">
                             <div class="form-group">
                                 <label>Email Id:</label>
                                 <input type="email" class="form-control" formControlName="emailId" placeholder="Enter Email id">
@@ -206,16 +523,10 @@
                     </div>
                 </div>
             </div>
-            <div class="card">
+            <div class="card  example-container mat-elevation-z8 pb-4">
                 <div class="card-body">
                     <h3>Other Deatils</h3>
                 <div class="row">
-                    <div class="col-md-3 mb-2">
-                        <div class="form-group">
-                            <label>Emp.No:</label>
-                            <input type="number" class="form-control" formControlName="empNo" placeholder="Enter empNo">
-                        </div>
-                    </div>
                     <div class="col-md-3 mb-2">
                         <div class="form-group">
                             <label>Date of Joining:</label>
@@ -292,173 +603,49 @@
                     <div class="col-md-3">
                         <div class="form-group">
                             <label>Patents:</label>
-                            <input type="text" class="form-control" formControlName="patents" placeholder="Enter Patents">
+                            <input type="checkbox"  formControlName="patents">
                         </div>
                     </div>
-                    
+                    <div class="col-lg-12" *ngIf="registerStaff.value.patents === true">
+                        <div class="card example-container mat-elevation-z8">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between">
+                                    <h3 class="text-right">Patents</h3>
+                                    <button (click)="addPatentDetails()">Add Row</button>
+                                </div>
+                                <div class="table-resonsive">
+                                    <table class="table table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th>S.No</th>
+                                                <th>Title</th>
+                                                <th>Year Of Award</th>
+                                                <th>National/International</th>
+                                                <th>Status</th>
+                                                <th>Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr formArrayName="patentDto" *ngFor="let item of patentFormGroups.controls; let i = index;">
+                                                <td>{{i+1}}</td>
+                                                <td [formGroupName]="i"><input type="text" formControlName="title" class="form-control"></td>
+                                                <td [formGroupName]="i"><input type="date" formControlName="yearOfAward" class="form-control"></td>
+                                                <td [formGroupName]="i"><input type="text" formControlName="nationalOrInternational" class="form-control"></td>
+                                                <td [formGroupName]="i"><input type="text" formControlName="status" class="form-control"></td>
+                                                <td [formGroupName]="i" ><mat-icon style="cursor: pointer;" (click)="removePatentDetails(i)">delete</mat-icon></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 </div>
             </div>
             <div>
             </div>
         </form>
-        <form *ngIf="selectedFaculity.action === 'uploadExcel'">
-            <div class="form-group">
-                <label>Upload Excel File:</label>
-                <input class="form-control" type="file" accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel" />
-            </div>
-        </form>
-        <div class="view" *ngIf="selectedFaculity.action === 'view'">
-            <div class="header">
-                <div class="card mb-2">
-                    <div class="card-body">
-                        <h3>Personal Details</h3>
-                    <div class="row">
-                        <div class="col-md-4 mb-2">
-                            <div class="form-group">
-                                <label>FullName:</label>
-                                <p>{{selectedFaculity?.data.fullName}}</p>
-                            </div>
-                        </div>
-                        <div class="col-md-4 mb-2">
-                            <div class="form-group">
-                                <label>Mobile No:</label>
-                                <p>{{selectedFaculity?.data.phone}}</p>
-                            </div>
-                        </div>
-                        <div class="col-md-4 mb-2">
-                            <div class="form-group">
-                                <label>Email Id:</label>
-                                <p>{{selectedFaculity?.data.emailId}}</p>
-                            </div>
-                        </div>
-                        <div class="col-md-3 mb-2">
-                            <div class="form-group">
-                                <label>Date of Birth:</label>
-                                <p>{{selectedFaculity?.data.dob | date:"dd-MM-yyyy"}}</p>
-                            </div>
-                        </div>
-                        <div class="col-md-3 mb-2">
-                            <div class="form-group">
-                                <label>Gender:</label>
-                                <p>{{selectedFaculity?.data.gender}}</p>
-                            </div>
-                        </div>
-                        <div class="col-md-3 mb-2">
-                            <div class="form-group">
-                                <label>PanNumber:</label>
-                                <p>{{selectedFaculity?.data.panNumber}}</p>
-                            </div>
-                        </div>
-                        <div class="col-md-3 mb-2">
-                            <div class="form-group">
-                                <label>AadharNumber:</label>
-                                <p>{{selectedFaculity?.data.aadharNumber}}</p>
-                            </div>
-                        </div>
-                    </div>
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-body">
-                    <h3>Other Deatils</h3>
-                <div class="row">
-                    <div class="col-md-3 mb-2">
-                        <div class="form-group">
-                            <label>Emp.No:</label>
-                            <p>{{selectedFaculity?.data.empNo}}</p>
-                        </div>
-                    </div>
-                    <div class="col-md-3 mb-2">
-                        <div class="form-group">
-                            <label>Date of Joining:</label>
-                            <p>{{selectedFaculity?.data.doj | date:'dd-MM-yyyy'}}</p>
-                        </div>
-                    </div>
-                    <div class="col-md-3 mb-2">
-                        <div class="form-group">
-                            <label>Department:</label>
-                            <p>{{selectedFaculity?.data.dpmt}}</p>
-                        </div>
-                    </div>
-                    <div class="col-md-3 mb-2">
-                        <div class="form-group">
-                            <label>Category:</label>
-                            <p>{{selectedFaculity?.data.category}}</p>
-                        </div>
-                    </div>
-                    <div class="col-md-3 mb-2">
-                        <div class="form-group">
-                            <label>Qualification:</label>
-                            <p>{{selectedFaculity?.data.qualification}}</p>
-                        </div>
-                    </div>
-                    <div class="col-md-3 mb-2">
-                        <div class="form-group">
-                            <label>Present Position:</label>
-                            <p>{{selectedFaculity?.data.presentPosition}}</p>
-                        </div>
-                    </div>
-                    
-                    <div class="col-md-3 mb-2">
-                        <div class="form-group">
-                            <label>TeachingExp:</label>
-                            <p>{{selectedFaculity?.data.teachingExp}}</p>
-                        </div>
-                    </div>
-                    <div class="col-md-3 mb-2">
-                        <div class="form-group">
-                            <label>IndustrialExp:</label>
-                            <p>{{selectedFaculity?.data.industrialExp}}</p>
-                        </div>
-                    </div>
-                    <div class="col-md-3 mb-2">
-                        <div class="form-group">
-                            <label>No. of Phd's:</label>
-                            <p>{{selectedFaculity?.data.noOfPhd}}</p>
-                        </div>
-                    </div>
-                    <div class="col-md-3 mb-2">
-                        <div class="form-group">
-                            <label>Awards if any:</label>
-                            <p>{{selectedFaculity?.data.awards}}</p>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="form-group">
-                            <label>No. of researchPapers:</label>
-                            <p>{{selectedFaculity?.data.noOfResearchPapers}}</p>
-                        </div>
-                    </div>
-                    <div class="col-md-3 mb-2">
-                        <div class="form-group">
-                            <label>Books Authored:</label>
-                            <p>{{selectedFaculity?.data.booksAuthored}}</p>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="form-group">
-                            <label>total No.of researchs:</label>
-                            <p>{{selectedFaculity?.data.totalNoOfResearch}}</p>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="form-group">
-                            <label>Patents:</label>
-                            <p>{{selectedFaculity?.data.patents}}</p>
-                        </div>
-                    </div>
-                </div>
-                </div>
-            </div>
-        </div>
     </div>
-    <mat-dialog-actions class="d-flex justify-content-end">
-        <button *ngIf="selectedFaculity.action === 'add'" class="btn" (click)="onSubmit()" type="submit">Create Faculity</button>
-        <button *ngIf="selectedFaculity.action === 'update'" class="btn" (click)="onSubmit()" type="submit">Update Faculity</button>
-        <button *ngIf="selectedFaculity.action === 'uploadExcel'" class="btn" (click)="onSubmit()" type="submit">Submit</button>
-        <button  class="btn mx-2" type="submit" (click)="onClose()">Close</button>
-    </mat-dialog-actions>
-</div>
+</div> -->
     

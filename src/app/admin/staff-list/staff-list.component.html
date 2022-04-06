@@ -173,6 +173,8 @@
 </div> -->
 
 
+<!-- <iframe id="theFrame" src="http://localhost:4300/menu" style="width:100%; height: 100%;" frameborder="3">
+</iframe> -->
 <div class="country-container mt-3">
   <div class="container-fluid">
     <div class="card card-custom example example-compact gutter-b">
@@ -185,11 +187,11 @@
             <input type="search" class="form-control" [(ngModel)]="searchData" placeholder="Search Here ..."> 
           </div>
           <div class="example-tools ">
-            <select  class="form-select form-select-md mx-1" aria-label="Default select example">
+            <select  class="form-select form-select-md mx-1" aria-label="Default select example" [(ngModel)]="searchDpmt" (change)="searchData = null">
               <option selected>Select Department</option>
-              <option>ECE</option>
-              <option>CSE</option>
-              <option>EEE</option>
+              <option value="Anthropology">ECE</option>
+              <option value="Geology">CSE</option>
+              <option value="eee">EEE</option>
               <option>MEC</option>
               <option>CIVIL</option>
               <option>CHEMICAL</option>
@@ -229,10 +231,10 @@
                      </tr>
                  </thead> 
                  <tbody>
-                     <tr *ngFor="let item of faculity | filter: searchData; let i=index" >
+                     <tr *ngFor="let item of faculity | filter: searchData | filter:searchDpmt; let i=index" >
                       <td>{{i+1}} </td>
                       <td>{{item.empNo}}</td>
-                      <th>{{item.fullName}} </th>
+                      <th>{{item.name}} </th>
                       <td>{{item.dpmt}} </td>
                       <td>{{item.dob | date: 'dd/MM/yyyy'}}</td>
                       <td>{{item.gender}}</td>

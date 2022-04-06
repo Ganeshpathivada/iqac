@@ -1,0 +1,50 @@
+<div class="agent-addupdate-dialog">
+    <div class="d-flex justify-content-between">
+      <!-- <h1 mat-dialog-title>
+        {{ selectedStory.action === "add" ? "ADD STORY" : "Upload Asserts" }} 
+      </h1> -->
+      <h1 mat-dialog-title *ngIf="selectedRank.action === 'add'">Add Rank</h1>
+      <h1 mat-dialog-title *ngIf="selectedRank.action === 'update'">Update Rank Details</h1>
+      <div class="button">
+        <a class="btn btn-xs btn-icon btn-hover-primary" href="javascript:void(0)" (click)="onClose()">X</a>
+      </div>
+    </div>
+  
+    <div mat-dialog-content>
+        <form [formGroup]="rankForm">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label>Rank</label>
+                        <input type="number" class="form-control" formControlName="rank">
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label>From Year</label>
+                        <input type="text" class="form-control" formControlName="fromYear">
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label>To Year</label>
+                        <input type="text" class="form-control" formControlName="toYear">
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label>Rank Type</label>
+                        <select class="form-control" formControlName="type">
+                            <option [value]="null" [disabled]="true">Select Rank Type</option>
+                            <option [value]="type" *ngFor="let type of rankType" >{{type}}</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <mat-dialog-actions class="d-flex justify-content-end">
+        <button  class="btn mx-2" type="submit" (click)="onClose()">Close</button>
+        <button  class="btn" (click)="onSubmit()" type="submit">{{ selectedRank.action === "add" ? "ADD RANK" : "UPDATE RANK" }}</button>
+    </mat-dialog-actions>
+    </div>

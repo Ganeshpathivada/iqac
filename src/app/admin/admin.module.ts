@@ -10,6 +10,10 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { MaterialModule } from '../shared/material/material.module';
 import { MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material/dialog';
 import { FilterPipe } from '../shared/pipes/filter.pipe';
+import { RankComponent } from './rank/rank.component';
+import { AddUpdateRankDailogComponent } from './add-update-dailog/add-update-rank-dailog/add-update-rank-dailog.component';
+import { ReportsComponent } from './reports/reports.component';
+import { AddUpdateReportsDailogComponent } from './add-update-dailog/add-update-reports-dailog/add-update-reports-dailog.component';
 
 
 @NgModule({
@@ -18,7 +22,11 @@ import { FilterPipe } from '../shared/pipes/filter.pipe';
     StaffListComponent,
     AddUpdateStaffDailogComponent,
     DashboardComponent,
-    FilterPipe
+    FilterPipe,
+    RankComponent,
+    AddUpdateRankDailogComponent,
+    ReportsComponent,
+    AddUpdateReportsDailogComponent
     
   ],
   imports: [
