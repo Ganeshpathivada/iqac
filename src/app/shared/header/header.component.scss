@@ -3,6 +3,21 @@
         background-color: #591434 !important; 
     }
 
+// .sticky-top{
+//     position: sticky;
+//     top: 0;
+//     z-index: 1020;
+//     }
+    .sticky-top {
+        position: relative;
+        position: -webkit-sticky;
+        position: sticky;
+      }
+      @supports (position: sticky) or (position: -webkit-sticky) {
+        .some-sticky-element {
+          bottom: 30px;
+        }
+      }
 // // .header{
 // //     background-color: #F8F7DF;
 // //     color: #8B785F;

@@ -39,8 +39,7 @@
                                 <a (click)="onChange('the week hansa')" [ngClass]="{'active': searchByType === 'the week hansa'}"  class="list-group-item border-end-0 d-inline-block text-truncate" ><span>The Week Hansa</span> </a>
                                 <a (click)="onChange('atal ranking')" [ngClass]="{'active': searchByType === 'atal ranking'}"  class="list-group-item border-end-0 d-inline-block text-truncate" ><span>Atal ranking</span> </a>
                                 <a (click)="onChange('qs')" [ngClass]="{'active': searchByType === 'qs'}"  class="list-group-item border-end-0 d-inline-block text-truncate" ><span>QS</span> </a>
-                                <a (click)="onChange('tle')" [ngClass]="{'active': searchByType === 'tle'}"  class="list-group-item border-end-0 d-inline-block text-truncate" ><span>TLE</span> </a>
-                                
+                                <a (click)="onChange('the')" [ngClass]="{'active': searchByType === 'the'}"  class="list-group-item border-end-0 d-inline-block text-truncate" ><span>THE world University</span> </a>   
                             </div>
                         </div>
                     </div>
@@ -62,7 +61,6 @@
                                     </thead> 
                                     <tbody>
                                         <tr *ngFor="let item of rankDetails | filter: searchData | filter:searchByType; let i=index" >
-                                          <div>{{rankDetails.length}}</div>
                                             <td>{{i+1}} </td>
                                             <td>{{item.rank1}}</td>
                                             <td>{{item.year}}</td>

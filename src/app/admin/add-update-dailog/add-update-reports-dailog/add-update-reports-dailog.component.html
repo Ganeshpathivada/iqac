@@ -1,1 +1,35 @@
-<p>add-update-reports-dailog works!</p>
+<div class="agent-addupdate-dialog">
+    <div class="d-flex justify-content-between">
+      <!-- <h1 mat-dialog-title>
+        {{ selectedStory.action === "add" ? "ADD STORY" : "Upload Asserts" }} 
+      </h1> -->
+      <h1 mat-dialog-title *ngIf="selectedRank.action === 'add'">ADD REPORT</h1>
+      <h1 mat-dialog-title *ngIf="selectedRank.action === 'update'">Update Report Details</h1>
+      <div class="button">
+        <a class="btn btn-xs btn-icon btn-hover-primary" href="javascript:void(0)" (click)="onClose()">X</a>
+      </div>
+    </div>
+  
+    <div mat-dialog-content>
+        <form [formGroup]="reportName">
+            <div class="row">
+                <!-- <div class="col-md-12"> -->
+                    <!-- <div class="form-group">
+                        <label>Doc Name</label>
+                        <input type="text" class="form-control" formControlName="docName">
+                    </div> -->
+                <!-- </div> -->
+                <div class="col-md-12 mt-2">
+                    <div class="form-group">
+                        <label>File</label>
+                        <input type="file" class="form-control" (change)="onChangeFile($event)" formControlName="file">
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <mat-dialog-actions class="d-flex justify-content-end">
+        <button  class="btn mx-2" type="submit" (click)="onClose()">Close</button>
+        <button  class="btn" (click)="onSubmit()" type="submit">{{ selectedRank.action === "add" ? "ADD REPORT" : "UPDATE REPORT" }}</button>
+    </mat-dialog-actions>
+    </div>

@@ -180,7 +180,7 @@
     <div class="card card-custom example example-compact gutter-b">
       <div class="card-header">
         <div class="card-title">
-          <h3 class="card-label">Faculity</h3>
+          <h3 class="card-label">Faculty</h3>
         </div>
         <div class="card-toolbar">
           <div class="serach-input">
@@ -188,23 +188,60 @@
           </div>
           <div class="example-tools ">
             <select  class="form-select form-select-md mx-1" aria-label="Default select example" [(ngModel)]="searchDpmt" (change)="searchData = null">
-              <option selected>Select Department</option>
-              <option value="Anthropology">ECE</option>
-              <option value="Geology">CSE</option>
-              <option value="eee">EEE</option>
-              <option>MEC</option>
-              <option>CIVIL</option>
-              <option>CHEMICAL</option>
+              <option [value]="null">Select Department</option>/
+              <option value="Applied Mathematics">Applied Mathematics</option>
+              <option value="A.U.Dr. B.R.Ambedkar College of Law">A.U.Dr. B.R.Ambedkar College of Law</option>
+              <option value="AU College of Pharmaceutical Sciences">AU College of Pharmaceutical Sciences</option>
+              <option value="Architecture">Architecture</option>
+              <option value="Bio-Chemistry">Bio-Chemistry</option>
+              <option value="Botany">Botany</option>
+              <option value="Chemical Engineering">Chemical Engineering</option>
+              <option value="Civil Engineering">Civil Engineering</option>
+              <option value="Computer Science & Systems Engineering">Computer Science & Systems Engineering</option>
+              <option value="Electrical Engineering">Electrical Engineering</option>
+              <option value="Electronics & Communications Engineering">Electronics & Communications Engineering</option>
+              <option value="Engineering Chemistry">Engineering Chemistry</option>
+              <option value="Engineering Mathematics">Engineering Mathematics</option>
+              <option value="Engineering Physics">Engineering Physics</option>
+              <option value="Environmental Science">Environmental Science</option>
+              <option value="Geography">Geography</option>
+              <option value="Geology">Geology</option>
+              <option value="Geo-Physics">Geo-Physics</option>
+              <option value="Geo-Engineering">Geo-Engineering</option>
+              <option value="Humanities & Social Sciences">Humanities & Social Sciences</option>
+              <option value="Human Genetics">Human Genetics</option>
+              <option value="Instrument Technology">Instrument Technology</option>
+              <option value="Inorganic & Analytical Chemistry">Inorganic & Analytical Chemistry</option>
+              <option value="Marine Living Resources">Marine Living Resources</option>
+              <option value="Mathematics">Mathematics</option>
+              <option value="Meteorology & Oceanography">Meteorology & Oceanography</option>
+              <option value="Zoology">Zoology</option>
+              <option value="Marine Engineering">Marine Engineering</option>
+              <option value="Mechanical Engineering">Mechanical Engineering</option>
+              <option value="Metallurgical Engineering">Metallurgical Engineering</option>
+              <option value="Nuclear Physics">Nuclear Physics</option>
+              <option value="Organic Chemistry,Foods,Drugs & Water">Organic Chemistry,Foods,Drugs & Water</option>
+              <option value="Physics">Physics</option>
+              <option value="PNCO">PNCO</option>
+              <option value="Psychology">Psychology</option>
+              <option value="Social Work">Social Work</option>
+              <option value="School of Distance Education">School of Distance Education</option>
+              <option value="Statistics">Statistics</option>
+              <option value="Telugu">Telugu</option>
+              <option value="Yoga & Consciousness">Yoga & Consciousness</option>
+              
+              
+              
             </select>
           </div>
           <div class="example-tools justify-content-centerr mx-2">
             <button (click)="addFaculitybyExcel()" class="btn btnGroup">
-              Add Faculity by Excel
+              Add Faculty by Excel
             </button>
           </div>
           <div class="example-tools justify-content-centerr">
             <button (click)="addFaculity()" class="btn btnGroup">
-              Add Faculity
+              Add Faculty
             </button>
           </div>
         </div>
@@ -231,8 +268,8 @@
                      </tr>
                  </thead> 
                  <tbody>
-                     <tr *ngFor="let item of faculity | filter: searchData | filter:searchDpmt; let i=index" >
-                      <td>{{i+1}} </td>
+                     <tr *ngFor="let item of faculity | filter: searchData | filter:searchDpmt | paginate: { itemsPerPage: itemsPerPage, currentPage: p }; let i=index" >
+                      <td>{{ itemsPerPage * (p - 1) + i + 1 }}</td>
                       <td>{{item.empNo}}</td>
                       <th>{{item.name}} </th>
                       <td>{{item.dpmt}} </td>
@@ -254,12 +291,29 @@
               </table>
 
                <!-- pagination div starts from here -->
-              <mat-paginator [length]="faculity.length"
+              <!-- <mat-paginator [length]="faculity.length"
                             [pageSize]="10"
                             [pageIndex]="pageIndex"
                             [pageSizeOptions]="[5, 10, 25, 100]"
                             aria-label="Select page">
-              </mat-paginator>
+              </mat-paginator> -->
+              <div class="d-flex align-items-center justify-content-end" >
+                <div class="rowsperpage mb-3">
+                  <span>Rows :</span>
+                <select [(ngModel)]="itemsPerPage" class="itemperpageselect">
+                  <option>5</option>
+                  <option>10</option>
+                  <option>20</option>
+                  <option>50</option>
+                  <option>100</option>
+                </select>
+                <span>1-{{p}} of {{(faculity?.length) |number:'1.0-0'}}</span>
+                </div>
+            <pagination-controls (pageChange)="p = $event" previousLabel="" 
+              nextLabel="" >
+            </pagination-controls>
+          </div>
+              <!-- <pagination-controls class="text-right" (pageChange)="p = $event"></pagination-controls> -->
             
         <!-- pagination div ends here -->
           </div>

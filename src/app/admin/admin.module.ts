@@ -6,6 +6,7 @@ import { AdminComponent } from './admin.component';
 import { StaffListComponent } from './staff-list/staff-list.component';
 import { AddUpdateStaffDailogComponent } from './add-update-dailog/add-update-staff-dailog/add-update-staff-dailog.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {NgxPaginationModule} from 'ngx-pagination';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { MaterialModule } from '../shared/material/material.module';
 import { MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material/dialog';
@@ -34,7 +35,8 @@ import { AddUpdateReportsDailogComponent } from './add-update-dailog/add-update-
     AdminRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    MaterialModule
+    MaterialModule,
+    NgxPaginationModule
   ],
   providers: [
     {provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: false}}

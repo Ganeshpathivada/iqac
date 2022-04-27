@@ -109,8 +109,8 @@ export class AddUpdateStaffDailogComponent implements OnInit {
     return this.fb.group({
       titleOfBook:[""],
       titleOfBookChapter:[""],
-      isbnNo:[""],
-      yearOfPublishing:[""],
+      isbnNo:[null],
+      yearOfPublishing:[null],
       nationalOrInternational:[""],
       affiliatingInst:[""]
     })
@@ -155,9 +155,9 @@ export class AddUpdateStaffDailogComponent implements OnInit {
       nameOfTheAuthors:[""],
       titleOfThePapers:[""],
       journalnameVolPP:[""],
-      issnNo:[""],
+      issnNo:[null],
       nationalOrInternational:[""],
-      academicYear:[""]
+      academicYear:[null]
     })
   }
 
@@ -199,7 +199,7 @@ export class AddUpdateStaffDailogComponent implements OnInit {
   getPatentsDetails(): FormGroup{
     return this.fb.group({
       title:[""],
-      yearOfAward:[""],
+      yearOfAward:[null],
       status:[""],
       nationalOrInternational:[""]
     })

@@ -178,7 +178,7 @@
                                                             <tr formArrayName="patentDto" *ngFor="let item of patentFormGroups.controls; let i = index;">
                                                                 <td>{{i+1}}</td>
                                                                 <td [formGroupName]="i"><input type="text" formControlName="title" class="form-control"></td>
-                                                                <td [formGroupName]="i"><input type="year" formControlName="yearOfAward" class="form-control"></td>
+                                                                <td [formGroupName]="i"><input type="number" formControlName="yearOfAward" class="form-control"></td>
                                                                 <td [formGroupName]="i"><input type="text" formControlName="nationalOrInternational" class="form-control"></td>
                                                                 <td [formGroupName]="i"><input type="text" formControlName="status" class="form-control"></td>
                                                                 <td [formGroupName]="i" ><mat-icon style="cursor: pointer;" (click)="removePatentDetails(i)">delete</mat-icon></td>
@@ -225,9 +225,9 @@
                                                             <tr formArrayName="bookDto" *ngFor="let item of bookFormGroups.controls; let i = index;">
                                                                 <td>{{i+1}}</td>
                                                                 <td [formGroupName]="i"><input type="text" formControlName="titleOfBook" class="form-control"></td>
-                                                                <td [formGroupName]="i"><input type="year" formControlName="titleOfBookChapter" class="form-control"></td>
-                                                                <td [formGroupName]="i"><input type="year" formControlName="isbnNo" class="form-control"></td>
-                                                                <td [formGroupName]="i"><input type="year" formControlName="yearOfPublishing" class="form-control"></td>
+                                                                <td [formGroupName]="i"><input type="text" formControlName="titleOfBookChapter" class="form-control"></td>
+                                                                <td [formGroupName]="i"><input type="number" formControlName="isbnNo" class="form-control"></td>
+                                                                <td [formGroupName]="i"><input type="number" formControlName="yearOfPublishing" class="form-control"></td>
                                                                 <td [formGroupName]="i"><input type="text" formControlName="nationalOrInternational" class="form-control"></td>
                                                                 <td [formGroupName]="i"><input type="text" formControlName="affiliatingInst" class="form-control"></td>
                                                                 <td [formGroupName]="i" ><mat-icon style="cursor: pointer;" (click)="removeBookDetails(i)">delete</mat-icon></td>
@@ -274,11 +274,11 @@
                                                             <tr formArrayName="rpDto" *ngFor="let item of researchPapersFormGroups.controls; let i = index;">
                                                                 <td>{{i+1}}</td>
                                                                 <td [formGroupName]="i"><input type="text" formControlName="nameOfTheAuthors" class="form-control"></td>
-                                                                <td [formGroupName]="i"><input type="year" formControlName="titleOfThePapers" class="form-control"></td>
-                                                                <td [formGroupName]="i"><input type="year" formControlName="journalnameVolPP" class="form-control"></td>
-                                                                <td [formGroupName]="i"><input type="year" formControlName="issnNo" class="form-control"></td>
+                                                                <td [formGroupName]="i"><input type="text" formControlName="titleOfThePapers" class="form-control"></td>
+                                                                <td [formGroupName]="i"><input type="text" formControlName="journalnameVolPP" class="form-control"></td>
+                                                                <td [formGroupName]="i"><input type="number" formControlName="issnNo" class="form-control"></td>
                                                                 <td [formGroupName]="i"><input type="text" formControlName="nationalOrInternational" class="form-control"></td>
-                                                                <td [formGroupName]="i"><input type="text" formControlName="academicYear" class="form-control"></td>
+                                                                <td [formGroupName]="i"><input type="number" formControlName="academicYear" class="form-control"></td>
                                                                 <td [formGroupName]="i" ><mat-icon style="cursor: pointer;" (click)="removeResearchPapersDetails(i)">delete</mat-icon></td>
                                                             </tr>
                                                         </tbody>

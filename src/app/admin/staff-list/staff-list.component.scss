@@ -45,3 +45,57 @@ img {
     vertical-align: text-top !important;
     font-size: small !important;
 }
+
+ /* pagination   */
+
+ ::ng-deep{
+    .ngx-pagination .current {
+        background-color: #591434 !important;
+      }
+      .ngx-pagination .pagination-previous a::before {
+        content: "<" !important;
+        background: #591434 !important;
+        padding: 7px 14px;
+        border-radius: 50%;
+        box-shadow: 3px 1px 10px 4px rgba(0, 0, 0, 0.25);
+        color: #fff;
+    }
+    .ngx-pagination .pagination-previous.disabled::before {
+        content: '<' !important;
+        background: white;
+        padding: 7px 14px;
+        border-radius: 50%;
+        box-shadow: 3px 1px 10px 4px rgba(0, 0, 0, 0.25);
+        color: black;
+    }
+    .ngx-pagination .pagination-next a::after {
+        content: '>' !important;
+        background: #591434 !important;
+        padding: 7px 14px;
+        border-radius: 50%;
+        box-shadow: 3px 1px 10px 4px rgba(0, 0, 0, 0.25);
+        color: #fff;
+  }
+   .ngx-pagination .pagination-next.disabled::after {
+    content: '>' !important;
+    background: white;
+    padding: 7px 14px;
+    border-radius: 50%;
+        box-shadow: 3px 1px 10px 4px rgba(0, 0, 0, 0.25);
+        color: rgb(3, 2, 2);
+}
+}
+
+
+  .itemperpageselect{
+      border: none;
+      margin-right: 18px;
+      margin-left: 3px;
+      color: #ccc;
+      font-size: 14px;
+  }
+  .rowsperpage{
+    // margin-bottom: 10px !important;
+    color: #ccc;
+    font-size: 14px;
+  }

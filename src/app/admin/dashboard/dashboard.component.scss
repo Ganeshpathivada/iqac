@@ -1,0 +1,147 @@
+.about{
+    // border-radius: 15px;
+    // background: #f1f1f0;
+    // padding: 20px;
+    width: 100%;
+    height: 100%;
+    background: #d3d4d0;
+        // background-image: linear-gradient(to right, #d8d4d400, rgb(230, 222, 222));
+    a{
+        text-decoration: none;
+    }  
+  }
+
+//   .home_section {
+//     // max-width: 1100px;
+//     // margin: auto;
+// }
+
+.section {
+    background: url(../../../assets/images/background.jpg) center;
+    background-attachment: fixed;
+    // padding: 130px 0 80px 0;
+    height: 230px;
+}
+
+.section h4 {
+    text-align: center;
+    color: #fff;
+    font-size: 30px;
+    padding-top: 96px;
+    text-align: center;
+}
+
+
+
+.heading h3 {
+    margin: 25px 0 20px 0;
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 5px;
+    display: inline-block;
+}
+.content{
+    background-image: url(../../../assets/images/header-bg.png);
+}
+.font-weight-bold{
+    font-weight: 700;
+}
+.links{
+    a{text-decoration: none;}
+    p{
+        margin: 0;
+    }
+    h4{
+        margin: 0;
+    }
+}
+.accordion-item{
+    h2{
+        margin: 0px !important;
+        background-color: darkgray;
+    }
+    .accordion-button {
+        padding: 0.5rem!important;
+        color: red;
+        font-weight: 600;
+    }
+}
+
+.accordion-body{
+    a{
+        // text-decoration: underline;
+        text-decoration: none;
+        color: black;
+        display: block;
+        &:hover{
+            text-decoration: underline;
+        color: black;
+        }
+        span{
+            color: blue;
+        }
+    }
+}
+
+// .about_people {
+//     display: flex;
+// }
+
+// .about_people .about_image {
+//     width: 32%;
+// }
+
+// .about_image {
+//     height: 350px;
+// }
+
+// .about_people .about_content {
+//     width: 63%;
+// }
+
+// .fac {
+//     width: 5%;
+// }
+
+// .about_content h3 {
+//     margin: 0px 0 10px 0;
+//     border-bottom: 2px solid #ccc;
+//     padding-bottom: 5px;
+//     display: inline-block;
+// }
+
+// .about_content p {
+//     text-align: justify;
+// }
+
+// .about_content ul {
+//     padding: 0px 0px 0px 19px;
+// }
+
+// .about_content ul li {
+//     padding-bottom: 15px;
+// }
+
+// .about_faculty {
+//     padding: 10px;
+// }
+
+// .about_faculty p {
+//     border-bottom: 2px solid #ccc;
+//     padding-bottom: 5px;
+// }
+
+// .fac_total_complete {
+//     display: flex;
+// }
+
+// .about_faculty {
+//     width: 32%;
+// }
+
+// .links {
+//     width: 63%;
+// }
+
+// .links a {
+//     padding-bottom: 10px;
+// }

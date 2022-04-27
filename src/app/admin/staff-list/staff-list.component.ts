@@ -1,9 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, Inject, OnInit } from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
-import { PageEvent } from '@angular/material/paginator';
 import { Router } from '@angular/router';
-import { DOCUMENT } from '@angular/common';
 import { AddUpdateStaffDailogComponent } from '../add-update-dailog/add-update-staff-dailog/add-update-staff-dailog.component';
 import { IqacServiceService } from 'src/app/services/iqac-service.service';
  
@@ -19,15 +17,18 @@ export class StaffListComponent implements OnInit {
   searchData:any;
   action: any;
   selectedFaculity: any;
-  searchDpmt:any;
+  searchDpmt:any=null;
 
   //pagination and api integration starts from here
-  pageIndex = 1;
-  // length = 100;
+  // pageIndex = 1;
+  // length = 10;
+  p:number = 1;
+  public itemsPerPage: number = 10;
   // pageSize = 10;
   // pageSizeOptions: number[] = [5, 10, 25, 50, 100];
-  // pageEvent: PageEvent;
-  // isDefault: boolean = true;
+  // isDefault: boolean = true; 
+
+  
 
   constructor(private http: HttpClient, private router: Router, private dialog: MatDialog,
     private iqacService: IqacServiceService) {
@@ -43,6 +44,7 @@ export class StaffListComponent implements OnInit {
       // const data = res
       console.log("data",res)
       this.faculity = res
+      this.p = 1
     })
   }
 
