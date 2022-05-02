@@ -2,7 +2,7 @@
 body{
     // font-style: normal;
     // font-family: sans-serif;
-    font-family: verdana, arial, helvetica, sans-serif;
+    font-family: 'Mulish', sans-serif !important;
 }
 
 .btn-primary{
@@ -24,3 +24,14 @@ body{
   }
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+button {
+    background-color: #b6686f ;
+    color: #fff ;
+    border: 1px solid #b6686f;
+    &:hover {
+        background-color: #fff;
+        color: #b6686f;
+        border: 1px solid #b6686f;
+    }
+}

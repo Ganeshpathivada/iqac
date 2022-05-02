@@ -2,9 +2,17 @@
     display: flex;
     justify-content: space-between;
 }
-.btnGroup{
-    color: #FFFFFF;
-    background-color: #591434;
+button {
+    background-color: #b6686f;
+    color: #fff;
+    border: 1px solid #b6686f;
+    font-size: 14px;
+    padding: 7px 15px;
+    &:hover {
+        background-color: #fff;
+        color: #b6686f;
+        border: 1px solid #b6686f;
+    }
 }
 mat-icon{
     font-size: 18px;
