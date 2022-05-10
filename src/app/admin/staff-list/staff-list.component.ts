@@ -11,22 +11,14 @@ import { IqacServiceService } from 'src/app/services/iqac-service.service';
   styleUrls: ['./staff-list.component.scss']
 })
 export class StaffListComponent implements OnInit {
-
-  url = "http://localhost:8080/api/v1/staff/"
   faculity :any;
   searchData:any;
   action: any;
   selectedFaculity: any;
   searchDpmt:any=null;
 
-  //pagination and api integration starts from here
-  // pageIndex = 1;
-  // length = 10;
   p:number = 1;
   public itemsPerPage: number = 10;
-  // pageSize = 10;
-  // pageSizeOptions: number[] = [5, 10, 25, 50, 100];
-  // isDefault: boolean = true; 
 
   
 
@@ -40,8 +32,7 @@ export class StaffListComponent implements OnInit {
   }
 
   getfaculiy(){
-    this.http.get(this.url).subscribe(res =>{
-      // const data = res
+    this.iqacService.getFaculty().subscribe(res=>{
       console.log("data",res)
       this.faculity = res
       this.p = 1
@@ -52,9 +43,10 @@ export class StaffListComponent implements OnInit {
     console.log(faculiy)
     let text = "Are you sure?\nYou won't be able to revert this!."
     if (confirm(text) == true) {
-      this.http.delete(this.url + faculiy.id).subscribe(res =>{
+      this.iqacService.deleteFaculty(faculiy.id).subscribe(res =>{
         console.log("data",res)
         alert("Faculity Has Been Deleted Successfully")
+        this.searchData = null
         this.getfaculiy()
       })
     } else {

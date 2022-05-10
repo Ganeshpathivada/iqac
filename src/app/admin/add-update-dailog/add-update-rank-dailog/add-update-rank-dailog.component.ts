@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { IqacServiceService } from 'src/app/services/iqac-service.service';
 
 @Component({
   selector: 'app-add-update-rank-dailog',
@@ -9,7 +10,6 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
   styleUrls: ['./add-update-rank-dailog.component.scss']
 })
 export class AddUpdateRankDailogComponent implements OnInit {
-  url = "http://localhost:8080/api/v1/rank/";
   selectedRank: any;
   rankForm: FormGroup;
   rankType=["india today","nirf","the week hansa","atal ranking","qs","tle"]
@@ -17,6 +17,7 @@ export class AddUpdateRankDailogComponent implements OnInit {
 
   constructor(private fb:FormBuilder, 
     private http:HttpClient,
+    private iqacService:IqacServiceService,
     private dialogRef: MatDialogRef<AddUpdateRankDailogComponent>,@Inject(MAT_DIALOG_DATA) data:any) {
     this.selectedRank = data;
     this.rankForm = this.fb.group({
@@ -47,12 +48,11 @@ export class AddUpdateRankDailogComponent implements OnInit {
     }
     console.log("form",formdata);
     if(this.selectedRank.action === 'update'){
-      this.http.put(this.url + `${this.selectedRank.data.id}`, formdata).subscribe(res=>{
+      this.iqacService.updateRank(this.selectedRank.data.id, formdata).subscribe(res=>{
         this.onClose()
       })
     }else{
-      this.http.post(this.url, formdata).subscribe(res=>{
-        // this.router.navigateByUrl('/admin/staff')
+      this.iqacService.addRank(formdata).subscribe(res=>{
         this.onClose()
       })
     }

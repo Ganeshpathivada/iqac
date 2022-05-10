@@ -15,6 +15,7 @@ import { RankComponent } from './rank/rank.component';
 import { AddUpdateRankDailogComponent } from './add-update-dailog/add-update-rank-dailog/add-update-rank-dailog.component';
 import { ReportsComponent } from './reports/reports.component';
 import { AddUpdateReportsDailogComponent } from './add-update-dailog/add-update-reports-dailog/add-update-reports-dailog.component';
+import { PdfViewerModule } from 'ng2-pdf-viewer';
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import { AddUpdateReportsDailogComponent } from './add-update-dailog/add-update-
     FormsModule,
     ReactiveFormsModule,
     MaterialModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    PdfViewerModule
   ],
   providers: [
     {provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: false}}

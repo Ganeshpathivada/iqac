@@ -60,7 +60,7 @@
                                         </tr>
                                     </thead> 
                                     <tbody>
-                                        <tr *ngFor="let item of rankDetails | filter: searchData | filter:searchByType; let i=index" >
+                                        <tr *ngFor="let item of rankDetails | filter: searchData | filter:searchByType | paginate: { itemsPerPage: itemsPerPage, currentPage: p }; let i=index" >
                                             <td>{{i+1}} </td>
                                             <td>{{item.rank1}}</td>
                                             <td>{{item.year}}</td>
@@ -75,12 +75,22 @@
                                     </table>
                     
                                     <!-- pagination div starts from here -->
-                                    <mat-paginator [length]="rankDetails?.length"
-                                                [pageSize]="10"
-                                                [pageIndex]="pageIndex"
-                                                [pageSizeOptions]="[5, 10, 25, 100]"
-                                                aria-label="Select page">
-                                    </mat-paginator>
+                                    <div class="d-flex align-items-center justify-content-end" >
+                                      <div class="rowsperpage mb-3">
+                                        <span>Rows :</span>
+                                      <select [(ngModel)]="itemsPerPage" class="itemperpageselect">
+                                        <option>5</option>
+                                        <option>10</option>
+                                        <option>20</option>
+                                        <option>50</option>
+                                        <option>100</option>
+                                      </select>
+                                      <span>1-{{p}} of {{(rankDetails?.length) |number:'1.0-0'}}</span>
+                                      </div>
+                                  <pagination-controls (pageChange)="p = $event" previousLabel="" 
+                                    nextLabel="" >
+                                  </pagination-controls>
+                                </div>
                                 
                             <!-- pagination div ends here -->
                                 </div>

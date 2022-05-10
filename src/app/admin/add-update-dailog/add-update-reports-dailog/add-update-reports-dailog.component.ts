@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { IqacServiceService } from 'src/app/services/iqac-service.service';
 
 @Component({
   selector: 'app-add-update-reports-dailog',
@@ -9,8 +10,7 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
   styleUrls: ['./add-update-reports-dailog.component.scss']
 })
 export class AddUpdateReportsDailogComponent implements OnInit {
-  url = "http://localhost:8080/api/v1/reports/";
-  selectedRank: any;
+  selectedReport: any;
   reportName: FormGroup;
   reportType=["pdf","excel","doc"]
   data: any;
@@ -18,8 +18,9 @@ export class AddUpdateReportsDailogComponent implements OnInit {
 
   constructor(private fb:FormBuilder, 
     private http:HttpClient,
+    private iqacService: IqacServiceService,
     private dialogRef: MatDialogRef<AddUpdateReportsDailogComponent>,@Inject(MAT_DIALOG_DATA) data:any) {
-    this.selectedRank = data;
+    this.selectedReport = data;
     this.reportName = this.fb.group({
       // docName:[""],
       file:[""]
@@ -27,7 +28,7 @@ export class AddUpdateReportsDailogComponent implements OnInit {
 }
 
   ngOnInit(): void {
-    if(this.selectedRank?.action === 'update'){
+    if(this.selectedReport?.action === 'update'){
       // this.rankForm.patchValue({
       //   rank:this.selectedRank.data.rank1,
       // })
@@ -45,9 +46,9 @@ export class AddUpdateReportsDailogComponent implements OnInit {
   onSubmit(){
     const formData = new FormData()
     // formData.append('docName', this.reportName.value.docName)
-    formData.append('files', this.data)
+    formData.append('file', this.data)
     // formData.append('docType', "pdf")
-    this.http.post(this.url, formData).subscribe(res=>{
+    this.iqacService.addReport(formData).subscribe(res=>{
       this.onClose()
     })
   }

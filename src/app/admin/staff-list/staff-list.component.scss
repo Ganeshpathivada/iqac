@@ -58,11 +58,11 @@ img {
 
  ::ng-deep{
     .ngx-pagination .current {
-        background-color: #591434 !important;
+        background-color: #b6686f !important;
       }
       .ngx-pagination .pagination-previous a::before {
         content: "<" !important;
-        background: #591434 !important;
+        background: #b6686f !important;
         padding: 7px 14px;
         border-radius: 50%;
         box-shadow: 3px 1px 10px 4px rgba(0, 0, 0, 0.25);
@@ -78,7 +78,7 @@ img {
     }
     .ngx-pagination .pagination-next a::after {
         content: '>' !important;
-        background: #591434 !important;
+        background: #b6686f !important;
         padding: 7px 14px;
         border-radius: 50%;
         box-shadow: 3px 1px 10px 4px rgba(0, 0, 0, 0.25);

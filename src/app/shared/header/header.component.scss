@@ -1,5 +1,5 @@
 .active {
-  border-bottom: 2px solid #591434;
+  border-bottom: 2px solid #b6686f;
   font-weight: bold;
 }
 
@@ -143,16 +143,16 @@
 //     margin: 13px 15px 0 0;
 //     padding: 0 16px 0 0;
 //     color: #FFFFFF;
-//     background-color: #591434;
+//     background-color: #b6686f;
 //     border-right: 1px solid #FFFFFF;
 // } */
 // #topnav ul li.active-class a, #topnav ul li a:hover {
 //     color: #FFFFFF;
-//     background-color: #591434;
+//     background-color: #b6686f;
 // }
 // .active{
 //     color: #FFFFFF !important;
-//     background-color: #591434 !important;
+//     background-color: #b6686f !important;
 // }
 
 // /* #topnav li {
@@ -188,10 +188,14 @@
 // .card-body p{
 //         font-size: 40px;
 // }
-
+.header{
+  position: sticky;
+  top: 0;
+  z-index: 102;
+}
 
 .navbar {
-  position: sticky;
+  // position: sticky;
   top: 0px;
   .site_header {
     width: 100%;
@@ -202,8 +206,8 @@
       width: 50%;
       img {
         margin-right: 15px;
-        height: 85px;
-        width: 85px;
+        height: 70px;
+        width: 70px;
       }
       h1 {
         font-size: 19px;
@@ -220,12 +224,19 @@
           text-transform: uppercase;
           font-weight: bold;
           &:hover {
-            // border-bottom: 2px solid #591434;
-            color: #591434;
+            // border-bottom: 2px solid #b6686f;
+            color: #b6686f;
           }
         }
       }
     }
+  }
+}
+
+.iqac{
+  list-style: none;
+  a{
+    text-decoration: none;
   }
 }
 

@@ -1,17 +1,17 @@
-<div class="agent-addupdate-dialog">
+<div class="agent-addupdate-dialog" *ngIf="selectedReport.action === 'add'">
     <div class="d-flex justify-content-between">
       <!-- <h1 mat-dialog-title>
         {{ selectedStory.action === "add" ? "ADD STORY" : "Upload Asserts" }} 
       </h1> -->
-      <h1 mat-dialog-title *ngIf="selectedRank.action === 'add'">ADD REPORT</h1>
-      <h1 mat-dialog-title *ngIf="selectedRank.action === 'update'">Update Report Details</h1>
+      <h1 mat-dialog-title *ngIf="selectedReport.action === 'add'">ADD REPORT</h1>
+      <h1 mat-dialog-title *ngIf="selectedReport.action === 'update'">{{selectedReport?.data?.name}}</h1>
       <div class="button">
         <a class="btn btn-xs btn-icon btn-hover-primary" href="javascript:void(0)" (click)="onClose()">X</a>
       </div>
     </div>
   
     <div mat-dialog-content>
-        <form [formGroup]="reportName">
+        <form [formGroup]="reportName" *ngIf="selectedReport.action === 'add'">
             <div class="row">
                 <!-- <div class="col-md-12"> -->
                     <!-- <div class="form-group">
@@ -27,9 +27,27 @@
                 </div>
             </div>
         </form>
+        
     </div>
     <mat-dialog-actions class="d-flex justify-content-end">
         <button  class="btn mx-2" type="submit" (click)="onClose()">Close</button>
-        <button  class="btn" (click)="onSubmit()" type="submit">{{ selectedRank.action === "add" ? "ADD REPORT" : "UPDATE REPORT" }}</button>
+        <button  class="btn" *ngIf="selectedReport.action === 'add'" (click)="onSubmit()" type="submit">{{ selectedReport.action === "add" ? "ADD REPORT" : "UPDATE REPORT" }}</button>
     </mat-dialog-actions>
+    </div>
+    <div class="agent-addupdate-dialog"  *ngIf="selectedReport.action === 'update'">
+        <div class="add-button">
+            <!-- <h1 mat-dialog-title>
+              {{ selectedStory.action === "add" ? "ADD STORY" : "Upload Asserts" }} 
+            </h1> -->
+            <!-- <h1 mat-dialog-title *ngIf="selectedReport.action === 'add'">ADD REPORT</h1>
+            <h1 mat-dialog-title *ngIf="selectedReport.action === 'update'">{{selectedReport?.data?.name}}</h1> -->
+            <div class="button">
+              <a class="btn btn-xs btn-icon btn-hover-primary" href="javascript:void(0)" (click)="onClose()">X</a>
+            </div>
+            </div>
+        <pdf-viewer [src]="selectedReport?.data?.url" 
+              [render-text]="true"
+              [original-size]="false"
+              style="width: 100%; height: 530px"
+  ></pdf-viewer>
     </div>

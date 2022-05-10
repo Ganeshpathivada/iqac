@@ -4,7 +4,7 @@
 }
 // .btnGroup{
 //     color: #FFFFFF;
-//     background-color: #591434;
+//     background-color: #b6686f;
 // }
 mat-icon{
     font-size: 18px;
@@ -49,7 +49,7 @@ img {
 
 .active{
     color: #FFFFFF !important;
-    background-color: #591434 !important; 
+    background-color: #b6686f !important; 
 }
 a {
     cursor: pointer;
@@ -69,4 +69,57 @@ button {
         color: #b6686f;
         border: 1px solid #b6686f;
     }
+}
+
+/* pagination   */
+
+::ng-deep{
+    .ngx-pagination .current {
+        background-color: #b6686f !important;
+      }
+      .ngx-pagination .pagination-previous a::before {
+        content: "<" !important;
+        background: #b6686f !important;
+        padding: 7px 14px;
+        border-radius: 50%;
+        box-shadow: 3px 1px 10px 4px rgba(0, 0, 0, 0.25);
+        color: #fff;
+    }
+    .ngx-pagination .pagination-previous.disabled::before {
+        content: '<' !important;
+        background: white;
+        padding: 7px 14px;
+        border-radius: 50%;
+        box-shadow: 3px 1px 10px 4px rgba(0, 0, 0, 0.25);
+        color: black;
+    }
+    .ngx-pagination .pagination-next a::after {
+        content: '>' !important;
+        background: #b6686f !important;
+        padding: 7px 14px;
+        border-radius: 50%;
+        box-shadow: 3px 1px 10px 4px rgba(0, 0, 0, 0.25);
+        color: #fff;
+  }
+   .ngx-pagination .pagination-next.disabled::after {
+    content: '>' !important;
+    background: white;
+    padding: 7px 14px;
+    border-radius: 50%;
+        box-shadow: 3px 1px 10px 4px rgba(0, 0, 0, 0.25);
+        color: rgb(3, 2, 2);
+}
+}
+
+.itemperpageselect{
+    border: none;
+    margin-right: 18px;
+    margin-left: 3px;
+    color: #ccc;
+    font-size: 14px;
+}
+.rowsperpage{
+  // margin-bottom: 10px !important;
+  color: #ccc;
+  font-size: 14px;
 }

@@ -1,8 +1,20 @@
 h3{
-    color: #591434;
+    color: #b6686f;
     font-weight: bold ;
 }
 .btn{
     color: #FFFFFF;
-    background-color: #591434;
+    background-color: #b6686f;
+}
+.add-button{
+    position: absolute;
+    top: 10;
+    right: 156px;
+    z-index: 1020;
+}
+
+::ng-deep{
+    .cdk-overlay-dark-backdrop {
+        background: rgba(0,0,0,0.80) !important;
+    }
 }

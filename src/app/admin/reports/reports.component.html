@@ -61,14 +61,15 @@
                                         </tr>
                                     </thead> 
                                     <tbody>
-                                        <tr *ngFor="let item of reportsDetails | filter: searchData; let i=index" >
+                                        <tr *ngFor="let item of reportsDetails | filter: searchData | paginate: { itemsPerPage: itemsPerPage, currentPage: p }; let i=index" >
                                             <td>{{i+1}} </td>
-                                            <td>{{item.docName}}</td>
+                                            <td>{{item.name}}</td>
                                             <!-- <td></td> -->
                                             <!-- <td>{{item.type}}</td> -->
                                             <td>
-                                                <!-- <mat-icon (click)="viewReports(item)">visibility</mat-icon> -->
                                                 <mat-icon (click)="viewReports(item)">visibility</mat-icon>
+                                                <!-- <mat-icon (click)="viewReports(item)"><a [href]="item.url" target="_blank" rel="noopener noreferrer">visibility</a></mat-icon> -->
+                                                
                                                 <mat-icon (click)="deleteReports(item)">delete</mat-icon>
                                             </td>
                                         </tr>
@@ -76,12 +77,22 @@
                                     </table>
                     
                                     <!-- pagination div starts from here -->
-                                    <mat-paginator [length]="reportsDetails?.length"
-                                                [pageSize]="10"
-                                                [pageIndex]="pageIndex"
-                                                [pageSizeOptions]="[5, 10, 25, 100]"
-                                                aria-label="Select page">
-                                    </mat-paginator>
+                                    <div class="d-flex align-items-center justify-content-end" >
+                                      <div class="rowsperpage mb-3">
+                                        <span>Rows :</span>
+                                      <select [(ngModel)]="itemsPerPage" class="itemperpageselect">
+                                        <option>5</option>
+                                        <option>10</option>
+                                        <option>20</option>
+                                        <option>50</option>
+                                        <option>100</option>
+                                      </select>
+                                      <span>1-{{p}} of {{(reportsDetails?.length) |number:'1.0-0'}}</span>
+                                      </div>
+                                  <pagination-controls (pageChange)="p = $event" previousLabel="" 
+                                    nextLabel="" >
+                                  </pagination-controls>
+                                </div>
                                 
                             <!-- pagination div ends here -->
                                 </div>

@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { IqacServiceService } from 'src/app/services/iqac-service.service';
 import { AddUpdateReportsDailogComponent } from '../add-update-dailog/add-update-reports-dailog/add-update-reports-dailog.component';
 
 @Component({
@@ -9,33 +10,25 @@ import { AddUpdateReportsDailogComponent } from '../add-update-dailog/add-update
   styleUrls: ['./reports.component.scss']
 })
 export class ReportsComponent implements OnInit {
-  url = "http://localhost:8080/api/v1/downloadFile/";
   searchData:any;
   reportsDetails:any;
-  // = [
-  //   {Reports:1, year:2012, type:"india today"},
-  //   {Reports:2, year:2013, type:"nirf"},
-  //   {Reports:3, year:2013, type:"the week hansa"},
-  //   {Reports:4, year:2013, type:"atal Reportsing"},
-  //   {Reports:5, year:2014, type:"qs"},
-  //   {Reports:5, year:2015, type:"tle"},
-  //   {Reports:5, year:2016, type:"nirf"},
-  //   {Reports:5, year:2017, type:"nirf"},
-  // ];
   searchByType:any ="nirf";
   pageIndex = 1;
   action: any;
   selectedReports: any;
+  p:number = 1;
+  public itemsPerPage: number = 10;
 
-  constructor(private dialog: MatDialog, private http:HttpClient) { }
+  constructor(private dialog: MatDialog, private http:HttpClient, private iqacService: IqacServiceService) { }
 
   ngOnInit(): void {
     this.getReports()
   }
 
   getReports(){
-    this.http.get(this.url).subscribe(res=>{
+    this.iqacService.getReport().subscribe(res=>{
       this.reportsDetails = res
+      this.p = 1
     })
   }
 
@@ -54,7 +47,7 @@ const dialogConfig = new MatDialogConfig();
 
     dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;
-    (dialogConfig.width = "450px"),
+    (dialogConfig.width = "1450px"),
       (dialogConfig.data = {
         action: this.action,
         data: this.selectedReports,
@@ -75,7 +68,7 @@ const dialogConfig = new MatDialogConfig();
   }
 
   deleteReports(Reports:any){
-    this.http.delete(this.url + Reports.id).subscribe(res=>{
+    this.iqacService.deleteReport(Reports.id).subscribe(res=>{
       // this.reportsDetails = res
       this.getReports()
     })

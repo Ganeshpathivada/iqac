@@ -14,8 +14,6 @@ export class AddUpdateStaffDailogComponent implements OnInit {
 
   registerStaff : FormGroup;
   address:any;
-  url = "http://localhost:8080/api/v1/staff/"
-  patentUrl = "http://localhost:8080/patent/patents/"
   staffData: any;
   selectedFaculity: any = {};
 
@@ -70,12 +68,12 @@ export class AddUpdateStaffDailogComponent implements OnInit {
       this.registerStaff.patchValue({
         name : this.selectedFaculity?.data.name,
         dpmt : this.selectedFaculity?.data.dpmt,
-        dob : this.selectedFaculity?.data.dob,
+        dob : this.formatDate(new Date(this.selectedFaculity?.data.dob)),
         gender : this.selectedFaculity?.data.gender,
         category : this.selectedFaculity?.data.category,  
         qualification : this.selectedFaculity?.data.qualification,
         presentPosition : this.selectedFaculity?.data.presentPosition,
-        doj : this.selectedFaculity?.data.doj,
+        doj : this.formatDate(new Date(this.selectedFaculity?.data.doj)),
         teachingExp : this.selectedFaculity?.data.teachingExp,
         industrialExp : this.selectedFaculity?.data.industrialExp,
         panNumber : this.selectedFaculity?.data.panNumber,
@@ -101,6 +99,16 @@ export class AddUpdateStaffDailogComponent implements OnInit {
     //   console.log("patent",res)
     // })
     
+  }
+
+  private formatDate(date:any) {
+    const d = new Date(date);
+    let month = '' + (d.getMonth() + 1);
+    let day = '' + d.getDate();
+    const year = d.getFullYear();
+    if (month.length < 2) month = '0' + month;
+    if (day.length < 2) day = '0' + day;
+    return [year, month, day].join('-');
   }
 
   //  BOOKS
@@ -237,7 +245,8 @@ export class AddUpdateStaffDailogComponent implements OnInit {
     console.log("sss",this.registerStaff.value)
     
     if(this.selectedFaculity?.action === "update"){
-      this.http.put(this.url + this.selectedFaculity?.data.id, this.registerStaff.value).subscribe(res=>{
+      
+      this.iqacService.updateFaculty(this.selectedFaculity?.data.id, this.registerStaff.value).subscribe(res=>{
         console.log("update", res)
         this.router.navigateByUrl('/admin/staff')
       })
@@ -265,7 +274,7 @@ export class AddUpdateStaffDailogComponent implements OnInit {
       //   sno: this.registerStaff.value.sno,
       //   empNo:this.registerStaff.value.empNo,
       // }
-      this.http.post(this.url, this.registerStaff.value).subscribe(res=>{
+      this.iqacService.addFaculty(this.registerStaff.value).subscribe(res=>{
         this.router.navigateByUrl('/admin/staff')
       })
     }
