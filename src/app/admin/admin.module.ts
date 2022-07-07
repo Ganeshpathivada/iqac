@@ -16,6 +16,7 @@ import { AddUpdateRankDailogComponent } from './add-update-dailog/add-update-ran
 import { ReportsComponent } from './reports/reports.component';
 import { AddUpdateReportsDailogComponent } from './add-update-dailog/add-update-reports-dailog/add-update-reports-dailog.component';
 import { PdfViewerModule } from 'ng2-pdf-viewer';
+import { NgxDocViewerModule } from 'ngx-doc-viewer';
 
 
 @NgModule({
@@ -38,7 +39,8 @@ import { PdfViewerModule } from 'ng2-pdf-viewer';
     ReactiveFormsModule,
     MaterialModule,
     NgxPaginationModule,
-    PdfViewerModule
+    PdfViewerModule,
+    NgxDocViewerModule
   ],
   providers: [
     {provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: false}}

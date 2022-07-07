@@ -21,6 +21,7 @@ export class AddUpdateReportsDailogComponent implements OnInit {
     private iqacService: IqacServiceService,
     private dialogRef: MatDialogRef<AddUpdateReportsDailogComponent>,@Inject(MAT_DIALOG_DATA) data:any) {
     this.selectedReport = data;
+    console.log("data",this.selectedReport)
     this.reportName = this.fb.group({
       // docName:[""],
       file:[""]

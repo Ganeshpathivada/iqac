@@ -9,18 +9,6 @@
             <div class="serach-input">
               <input type="search" class="form-control" [(ngModel)]="searchData" placeholder="Search Here ..."> 
             </div>
-            <!-- <div class="example-tools ">
-              <select  class="form-select form-select-md mx-1" aria-label="Default select example" [(ngModel)]="searchByType" (change)="searchData = null">
-                <option selected>Select Type</option>
-                <option value="all india Reports">All India Reports</option>
-                <option value="international">International</option>
-              </select>
-            </div> -->
-            <!-- <div class="example-tools justify-content-centerr mx-2">
-              <button (click)="addReports()" class="btn btnGroup">
-                Add Faculity by Excel
-              </button>
-            </div> -->
             <div class="example-tools justify-content-centerr">
               <button (click)="addReports()" class="btn btnGroup">
                 Add Reports
@@ -30,23 +18,7 @@
         </div>
         <div class="card-body">
             <div class="container-fluid">
-                <!-- <div class="row flex-nowrap">
-                    <div class="col-auto px-0">
-                        <div id="sidebar" class="collapse collapse-horizontal show border-end">
-                            <div id="sidebar-nav" class="list-group border-0 rounded-0 text-sm-start min-vh-100">
-                                <a (click)="onChange('nirf')" [ngClass]="{'active': searchByType === 'nirf'}"  class="list-group-item border-end-0 d-inline-block text-truncate" ><span>NIRF</span> </a>
-                                <a (click)="onChange('india today')" [ngClass]="{'active': searchByType === 'india today'}"  class="list-group-item border-end-0 d-inline-block text-truncate" ><span>India Today</span> </a>
-                                <a (click)="onChange('the week hansa')" [ngClass]="{'active': searchByType === 'the week hansa'}"  class="list-group-item border-end-0 d-inline-block text-truncate" ><span>The Week Hansa</span> </a>
-                                <a (click)="onChange('atal Reportsing')" [ngClass]="{'active': searchByType === 'atal Reportsing'}"  class="list-group-item border-end-0 d-inline-block text-truncate" ><span>Atal Reportsing</span> </a>
-                                <a (click)="onChange('qs')" [ngClass]="{'active': searchByType === 'qs'}"  class="list-group-item border-end-0 d-inline-block text-truncate" ><span>QS</span> </a>
-                                <a (click)="onChange('tle')" [ngClass]="{'active': searchByType === 'tle'}"  class="list-group-item border-end-0 d-inline-block text-truncate" ><span>TLE</span> </a>
-                                
-                            </div>
-                        </div>
-                    </div> -->
-                    <!-- <main class="col ps-md-2 pt-2"> -->
-                        <!-- <a href="#" data-bs-target="#sidebar" data-bs-toggle="collapse" class="border rounded-3 p-1 text-decoration-none"><i class="bi bi-list bi-lg py-2 p-1"></i> Menu</a> -->
-                        <div class="row">
+                    <div class="row">
                             <div class="col-12">
                                 <div class="mx-auto" *ngIf="reportsDetails?.length === 0">No Data Found</div>
                                 <div class="table-responsive example-container mat-elevation-z8"  *ngIf="reportsDetails?.length > 0">
@@ -67,7 +39,8 @@
                                             <!-- <td></td> -->
                                             <!-- <td>{{item.type}}</td> -->
                                             <td>
-                                                <mat-icon (click)="viewReports(item)">visibility</mat-icon>
+                                                <mat-icon><a [href]="item.url">download</a></mat-icon>
+                                                <mat-icon (click)="viewReports(item)" *ngIf="item.type === 'image/jpeg' || item.type === 'application/pdf' || item.type === 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'">visibility</mat-icon>
                                                 <!-- <mat-icon (click)="viewReports(item)"><a [href]="item.url" target="_blank" rel="noopener noreferrer">visibility</a></mat-icon> -->
                                                 
                                                 <mat-icon (click)="deleteReports(item)">delete</mat-icon>
@@ -98,8 +71,6 @@
                                 </div>
                             </div>
                         </div>
-                    <!-- </main>
-                </div> -->
             </div>
             
         </div>

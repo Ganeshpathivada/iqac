@@ -45,9 +45,19 @@
               <a class="btn btn-xs btn-icon btn-hover-primary" href="javascript:void(0)" (click)="onClose()">X</a>
             </div>
             </div>
-        <pdf-viewer [src]="selectedReport?.data?.url" 
+            <pdf-viewer *ngIf="selectedReport?.data?.type === 'application/pdf'"
+            [src]="selectedReport?.data?.url" 
               [render-text]="true"
               [original-size]="false"
-              style="width: 100%; height: 530px"
-  ></pdf-viewer>
+              style="width: 100%; height: 530px">
+            </pdf-viewer>
+            <!-- <ngx-doc-viewer
+                  [url]="selectedReport?.data?.url"
+                  viewer="google"
+                  style="width:100%;height:50vh;"
+                >
+            </ngx-doc-viewer> -->
+            <img *ngIf="selectedReport?.data?.type === 'image/jpeg'" [src]="selectedReport?.data?.url" style="width: 100%; height: 530px">
+            <ngx-doc-viewer [url]="selectedReport?.data?.url" viewer="mammoth" style="width:100%;height:93vh;"></ngx-doc-viewer>
+  
     </div>

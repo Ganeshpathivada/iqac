@@ -18,3 +18,10 @@ h3{
         background: rgba(0,0,0,0.80) !important;
     }
 }
+
+:host {
+  display: block;
+}
+p {
+  font-family: Lato;
+}
